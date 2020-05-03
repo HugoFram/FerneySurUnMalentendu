@@ -65,11 +65,11 @@ body{
     }
 }
 
-.modal-body {
-    background-color: $background-pale;
-}
-
 .dropdown-item {
     color: $background-pale;
     text-transform: uppercase;
+}
+
+#loginButton {
+    cursor: pointer;
 }

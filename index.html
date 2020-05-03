@@ -14,64 +14,75 @@
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
     <!-- endbuild -->
 
     <title>Ferney Sur un Malentendu</title>
 </head>
 
 <body>
-    <nav class = "navbar navbar-dark navbar-expand-sm fixed-top">
-        <div class = "container">
-            <button class = "navbar-toggler" type = "button" data-toggle="collapse" data-target="#Navbar">
-                <span class = "navbar-toggler-icon"></span>
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <a class = "navbar-brand mr-auto align-items-center" href="#">Ferney sur un Malentendu</a>
-            <div class = "collapse navbar-collapse" id = "Navbar">
-                <ul class = "navbar-nav mr-auto">
-                    <li class = "nav-item active"><a class = "nav-link" href = "#"><span class="fas fa-volleyball-ball fa-fw"></span> Next Match</a></li>
-                    <li class = "nav-item"><a class = "nav-link" href = "./calendar.html"><span class="fa fa-calendar fa-fw"></span> Calendar</a></li>
-                    <li class = "nav-item"><a class = "nav-link" href = "./results.html"><span class="fas fa-chart-line fa-fw"></span> Results</a></li>
-                    <li class = "nav-item"><a class = "nav-link" href = "./ranking.html"><span class="fa fa-trophy fa-fw"></span> Ranking</a></li>
+            <a class="navbar-brand mr-auto align-items-center" href="#">Ferney sur un Malentendu</a>
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active"><a class="nav-link" href="#"><span
+                                class="fas fa-volleyball-ball fa-fw"></span> Next Match</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./calendar.html"><span
+                                class="fa fa-calendar fa-fw"></span> Calendar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./results.html"><span
+                                class="fas fa-chart-line fa-fw"></span> Results</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./ranking.html"><span
+                                class="fa fa-trophy fa-fw"></span> Ranking</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarPresence" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarPresence" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="fa fa-user fa-fw"></span> Presence
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarPresence">
                             <a class="dropdown-item" href="./presence_training.html"> Training</a>
                             <a class="dropdown-item" href="./presence_match.html"> Match</a>
                         </div>
-                      </li>
-                    <li class = "nav-item"><a class = "nav-link" href = "./team.html"><span class="fa fa-address-book fa-fw"></span> Team</a></li>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="./team.html"><span
+                                class="fa fa-address-book fa-fw"></span> Team</a></li>
                 </ul>
-                <span class = "navbar-text">
-                    <a id = "loginButton" data-toggle="modal" data-target="#loginModal">
-                        <span class = "fa fa-sign-in"></span> Login
+                <span class="navbar-text">
+                    <a id="loginButton" data-toggle="modal" data-target="#loginModal">
+                        <span class="fa fa-sign-in"></span> Login
                     </a>
                 </span>
             </div>
         </div>
     </nav>
 
-    <div id = "loginModal" class = "modal fade" role = "dialog">
-        <div class = "modal-dialog modal-sm" role = "content">
-            <div class = "modal-content">
-                <div class = "modal-header">
-                    <h4 class = "modal-title">Login</h4>
-                    <button type = "button" class = "close" data-dismiss = "modal">
+    <div id="loginModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-sm" role="content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Login</h4>
+                    <button type="button" class="close" data-dismiss="modal">
                         &times;
                     </button>
                 </div>
-                <div class = "modal-body">
+                <div class="modal-body">
                     <form>
                         <div class="form-row">
                             <div class="form-group">
-                                    <label class="sr-only" for="name">Name</label>
-                                    <input type="text" class="form-control form-control-sm mr-1" id="name" placeholder="Enter your name">
+                                <label class="sr-only" for="name">Name</label>
+                                <input type="text" class="form-control form-control-sm mr-1" id="name"
+                                    placeholder="Enter your name">
                             </div>
                         </div>
                         <div class="form-row">
-                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>        
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto"
+                                data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
                         </div>
                     </form>
                 </div>
@@ -79,12 +90,425 @@
         </div>
     </div>
 
-     <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
-     <!-- build:js js/main.js -->
-     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-     <!-- endbuild -->
+    <div class="container">
+        <div class="row row-content">
+            <div class="col-sm-6">
+                <h2>Match Information</h2>
+
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#nextmatch0" role="tab" data-toggle="tab"><i>Next Match
+                                Date</i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#nextmatch1" role="tab" data-toggle="tab"><i>2nd Next Match
+                                Date</i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#nextmatch2" role="tab" data-toggle="tab"><i>3rd Next Match
+                                Date</i></a>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade show active" id="nextmatch0">
+                        <p>
+                            <i class="far fa-calendar-alt"></i>
+                            07-05-2020
+                            <small class="text-muted">(Thursday)</small>
+                        </p>
+                        <p>
+                            <i class="far fa-clock"></i>
+                            20h30
+                            <small class="text-muted">(Match start)</small>
+                        </p>
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <a class="address"
+                                href="https://www.google.com/maps/search/?api=1&amp;query=Route du Pré-Recoux 1 / 1285 Avusy (Athenaz)">Route
+                                du Pré-Recoux 1 / 1285 Avusy (Athenaz)</a>
+                        </p>
+                        <p>
+                            <strong>Opponent:</strong>
+                            Les Empereurs II
+                            <small class="text-muted">(Ranked 5<sup>th</sup>)</small>
+                        </p>
+                        <p>
+                            <strong>Previous Encounter:</strong>
+                            First Encounter
+                            <small class="text-muted"></small>
+                        </p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade show" id="nextmatch1">
+                        <p>
+                            <i class="far fa-calendar-alt"></i>
+                            08-05-2020
+                            <small class="text-muted">(Thursday)</small>
+                        </p>
+                        <p>
+                            <i class="far fa-clock"></i>
+                            20h30
+                            <small class="text-muted">(Match start)</small>
+                        </p>
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <a class="address"
+                                href="https://www.google.com/maps/search/?api=1&amp;query=Route du Pré-Recoux 1 / 1285 Avusy (Athenaz)">Route
+                                du Pré-Recoux 1 / 1285 Avusy (Athenaz)</a>
+                        </p>
+                        <p>
+                            <strong>Opponent:</strong>
+                            Les Empereurs II
+                            <small class="text-muted">(Ranked 5<sup>th</sup>)</small>
+                        </p>
+                        <p>
+                            <strong>Previous Encounter:</strong>
+                            First Encounter
+                            <small class="text-muted"></small>
+                        </p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade show" id="nextmatch2">
+                        <p>
+                            <i class="far fa-calendar-alt"></i>
+                            09-05-2020
+                            <small class="text-muted">(Thursday)</small>
+                        </p>
+                        <p>
+                            <i class="far fa-clock"></i>
+                            20h30
+                            <small class="text-muted">(Match start)</small>
+                        </p>
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <a class="address"
+                                href="https://www.google.com/maps/search/?api=1&amp;query=Route du Pré-Recoux 1 / 1285 Avusy (Athenaz)">Route
+                                du Pré-Recoux 1 / 1285 Avusy (Athenaz)</a>
+                        </p>
+                        <p>
+                            <strong>Opponent:</strong>
+                            Les Empereurs II
+                            <small class="text-muted">(Ranked 5<sup>th</sup>)</small>
+                        </p>
+                        <p>
+                            <strong>Previous Encounter:</strong>
+                            First Encounter
+                            <small class="text-muted"></small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div id="map"
+                    style="width: 100%; height: 400px; visibility: inherit; position: relative; outline: none;"
+                    class="leaflet html-widget html-widget-output shiny-bound-output leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom"
+                    tabindex="0">
+                    <div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(-17px, -31px, 0px);">
+                        <div class="leaflet-pane leaflet-tile-pane">
+                            <div class="leaflet-layer " style="z-index: 1; opacity: 1;">
+                                <div class="leaflet-tile-container leaflet-zoom-animated"
+                                    style="z-index: 18; transform: translate3d(0px, 0px, 0px) scale(1);">
+                                    <img alt="" role="presentation" src="//c.tile.openstreetmap.org/11/1058/726.png"
+                                        class="leaflet-tile leaflet-tile-loaded"
+                                        style="width: 256px; height: 256px; transform: translate3d(421px, -29px, 0px); opacity: 1;">
+                                    <img alt="" role="presentation" src="//a.tile.openstreetmap.org/11/1059/726.png"
+                                        class="leaflet-tile leaflet-tile-loaded"
+                                        style="width: 256px; height: 256px; transform: translate3d(677px, -29px, 0px); opacity: 1;">
+                                    <img alt="" role="presentation" src="//a.tile.openstreetmap.org/11/1058/727.png"
+                                        class="leaflet-tile leaflet-tile-loaded"
+                                        style="width: 256px; height: 256px; transform: translate3d(421px, 227px, 0px); opacity: 1;">
+                                    <img alt="" role="presentation" src="//b.tile.openstreetmap.org/11/1059/727.png"
+                                        class="leaflet-tile leaflet-tile-loaded"
+                                        style="width: 256px; height: 256px; transform: translate3d(677px, 227px, 0px); opacity: 1;">
+                                    <img alt="" role="presentation" src="//b.tile.openstreetmap.org/11/1057/726.png"
+                                        class="leaflet-tile leaflet-tile-loaded"
+                                        style="width: 256px; height: 256px; transform: translate3d(165px, -29px, 0px); opacity: 1;">
+                                    <img alt="" role="presentation" src="//b.tile.openstreetmap.org/11/1060/726.png"
+                                        class="leaflet-tile leaflet-tile-loaded"
+                                        style="width: 256px; height: 256px; transform: translate3d(933px, -29px, 0px); opacity: 1;">
+                                    <img alt="" role="presentation" src="//c.tile.openstreetmap.org/11/1057/727.png"
+                                        class="leaflet-tile leaflet-tile-loaded"
+                                        style="width: 256px; height: 256px; transform: translate3d(165px, 227px, 0px); opacity: 1;">
+                                    <img alt="" role="presentation" src="//c.tile.openstreetmap.org/11/1060/727.png"
+                                        class="leaflet-tile leaflet-tile-loaded"
+                                        style="width: 256px; height: 256px; transform: translate3d(933px, 227px, 0px); opacity: 1;">
+                                    <img alt="" role="presentation" src="//a.tile.openstreetmap.org/11/1056/726.png"
+                                        class="leaflet-tile leaflet-tile-loaded"
+                                        style="width: 256px; height: 256px; transform: translate3d(-91px, -29px, 0px); opacity: 1;">
+                                    <img alt="" role="presentation" src="//c.tile.openstreetmap.org/11/1061/726.png"
+                                        class="leaflet-tile leaflet-tile-loaded"
+                                        style="width: 256px; height: 256px; transform: translate3d(1189px, -29px, 0px); opacity: 1;">
+                                    <img alt="" role="presentation" src="//b.tile.openstreetmap.org/11/1056/727.png"
+                                        class="leaflet-tile leaflet-tile-loaded"
+                                        style="width: 256px; height: 256px; transform: translate3d(-91px, 227px, 0px); opacity: 1;">
+                                    <img alt="" role="presentation" src="//a.tile.openstreetmap.org/11/1061/727.png"
+                                        class="leaflet-tile leaflet-tile-loaded"
+                                        style="width: 256px; height: 256px; transform: translate3d(1189px, 227px, 0px); opacity: 1;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="leaflet-pane leaflet-shadow-pane">
+                            <img src="http://cdn.leafletjs.com/leaflet/v1.3.1/images/marker-shadow.png"
+                                class="leaflet-marker-shadow leaflet-zoom-animated" alt=""
+                                style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(455px, 316px, 0px);">
+                        </div>
+                        <div class="leaflet-pane leaflet-overlay-pane"></div>
+                        <div class="leaflet-pane leaflet-marker-pane">
+                            <img src="http://cdn.leafletjs.com/leaflet/v1.3.1/images/marker-icon.png"
+                                class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt=""
+                                tabindex="0"
+                                style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(455px, 316px, 0px); z-index: 316;">
+                        </div>
+                        <div class="leaflet-pane leaflet-tooltip-pane"></div>
+                        <div class="leaflet-pane leaflet-popup-pane"></div>
+                        <div class="leaflet-proxy leaflet-zoom-animated"
+                            style="transform: translate3d(271069px, 186116px, 0px) scale(1024);"></div>
+                    </div>
+                    <div class="leaflet-control-container">
+                        <div class="leaflet-top leaflet-left">
+                            <div class="leaflet-control-zoom leaflet-bar leaflet-control">
+                                <a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button"
+                                    aria-label="Zoom in">+</a>
+                                <a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button"
+                                    aria-label="Zoom out">−</a>
+                            </div>
+                        </div>
+                        <div class="leaflet-top leaflet-right"></div>
+                        <div class="leaflet-bottom leaflet-left"></div>
+                        <div class="leaflet-bottom leaflet-right">
+                            <div class="leaflet-control-attribution leaflet-control">
+                                <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> | ©
+                                <a href="http://openstreetmap.org">OpenStreetMap</a> contributors,
+                                <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class = "row">
+            <div class = "offset-2 col-8 offset-sm-4 col-sm-4">
+            <a role = "button" class = "btn btn-sm btn-primary align-self-center" 
+                id = "availabilityButton">Enter Availability</a>
+            </div>
+        </div>
+
+        <div class="row row-content">
+            <div class="col-12 col-sm-9">
+                <h2>Next match availability</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr role="row">
+                            <th class="sorting_disabled" rowspan="1" colspan="1" aria-label=" "> </th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1"
+                                colspan="1" aria-label="name: activate to sort column ascending">name</th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1"
+                                colspan="1" aria-label="availability: activate to sort column ascending">
+                                availability</th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1"
+                                colspan="1" aria-label="role: activate to sort column ascending">role</th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1"
+                                colspan="1" aria-label="trainingPresence: activate to sort column ascending">
+                                trainingPresence</th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1"
+                                colspan="1" aria-label="matchPresence: activate to sort column ascending">
+                                matchPresence</th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_2" rowspan="1"
+                                colspan="1" aria-label="selected: activate to sort column ascending">selected
+                            </th>
+                            <th class="dt-right sorting" tabindex="0" aria-controls="DataTables_Table_2"
+                                rowspan="1" colspan="1"
+                                aria-label="matchNum: activate to sort column ascending">matchNum</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr role="row" class="odd">
+                            <td>1</td>
+                            <td>Arnaud</td>
+                            <td>Available</td>
+                            <td>Attack</td>
+                            <td>67 % (12/18)</td>
+                            <td>44 % (4/9)</td>
+                            <td>Undetermined</td>
+                            <td class=" dt-right">34043</td>
+                        </tr>
+                        <tr role="row" class="even">
+                            <td>2</td>
+                            <td>Chloé</td>
+                            <td>Available</td>
+                            <td>Attack</td>
+                            <td>89 % (16/18)</td>
+                            <td>67 % (6/9)</td>
+                            <td>Undetermined</td>
+                            <td class=" dt-right">34043</td>
+                        </tr>
+                        <tr role="row" class="odd">
+                            <td>3</td>
+                            <td>Daniel</td>
+                            <td>Available</td>
+                            <td>Attack</td>
+                            <td>94 % (17/18)</td>
+                            <td>78 % (7/9)</td>
+                            <td>Undetermined</td>
+                            <td class=" dt-right">34043</td>
+                        </tr>
+                        <tr role="row" class="even">
+                            <td>4</td>
+                            <td>Laurence</td>
+                            <td>Available</td>
+                            <td>Attack</td>
+                            <td>67 % (12/18)</td>
+                            <td>56 % (5/9)</td>
+                            <td>Undetermined</td>
+                            <td class=" dt-right">34043</td>
+                        </tr>
+                        <tr role="row" class="odd">
+                            <td>5</td>
+                            <td>Sanaa</td>
+                            <td>Available</td>
+                            <td>Attack</td>
+                            <td>61 % (11/18)</td>
+                            <td>78 % (7/9)</td>
+                            <td>Undetermined</td>
+                            <td class=" dt-right">34043</td>
+                        </tr>
+                        <tr role="row" class="even">
+                            <td>6</td>
+                            <td>Alberto</td>
+                            <td>Available</td>
+                            <td>As needed</td>
+                            <td>56 % (10/18)</td>
+                            <td>33 % (3/9)</td>
+                            <td>Undetermined</td>
+                            <td class=" dt-right">34043</td>
+                        </tr>
+                        <tr role="row" class="odd">
+                            <td>7</td>
+                            <td>Hugo</td>
+                            <td>Available</td>
+                            <td>As needed</td>
+                            <td>83 % (15/18)</td>
+                            <td>67 % (6/9)</td>
+                            <td>Undetermined</td>
+                            <td class=" dt-right">34043</td>
+                        </tr>
+                        <tr role="row" class="even">
+                            <td>8</td>
+                            <td>Florent</td>
+                            <td>Available</td>
+                            <td>Central</td>
+                            <td>83 % (15/18)</td>
+                            <td>89 % (8/9)</td>
+                            <td>Undetermined</td>
+                            <td class=" dt-right">34043</td>
+                        </tr>
+                        <tr role="row" class="odd">
+                            <td>9</td>
+                            <td>Frank</td>
+                            <td>Available</td>
+                            <td>Central</td>
+                            <td>72 % (13/18)</td>
+                            <td>56 % (5/9)</td>
+                            <td>Undetermined</td>
+                            <td class=" dt-right">34043</td>
+                        </tr>
+                        <tr role="row" class="even">
+                            <td>10</td>
+                            <td>Isabelle</td>
+                            <td>Available</td>
+                            <td>Central</td>
+                            <td>56 % (10/18)</td>
+                            <td>56 % (5/9)</td>
+                            <td>Undetermined</td>
+                            <td class=" dt-right">34043</td>
+                        </tr>
+                        <tr role="row" class="odd">
+                            <td>11</td>
+                            <td>Jessica</td>
+                            <td>Available</td>
+                            <td>Central</td>
+                            <td>56 % (10/18)</td>
+                            <td>33 % (3/9)</td>
+                            <td>Undetermined</td>
+                            <td class=" dt-right">34043</td>
+                        </tr>
+                        <tr role="row" class="even">
+                            <td>12</td>
+                            <td>Anaelle</td>
+                            <td>Available</td>
+                            <td>Pass</td>
+                            <td>22 % (4/18)</td>
+                            <td>33 % (3/9)</td>
+                            <td>Undetermined</td>
+                            <td class=" dt-right">34043</td>
+                        </tr>
+                        <tr role="row" class="odd">
+                            <td>13</td>
+                            <td>Cédric</td>
+                            <td>Available</td>
+                            <td>Pass</td>
+                            <td>72 % (13/18)</td>
+                            <td>56 % (5/9)</td>
+                            <td>Undetermined</td>
+                            <td class=" dt-right">34043</td>
+                        </tr>
+                        <tr role="row" class="even">
+                            <td>14</td>
+                            <td>Margaux</td>
+                            <td>Available</td>
+                            <td>Pass</td>
+                            <td>67 % (12/18)</td>
+                            <td>67 % (6/9)</td>
+                            <td>Undetermined</td>
+                            <td class=" dt-right">34043</td>
+                        </tr>
+                        <tr role="row" class="odd">
+                            <td>15</td>
+                            <td>Anne-Laure</td>
+                            <td>Available if needed</td>
+                            <td>Pass</td>
+                            <td>44 % (8/18)</td>
+                            <td>11 % (1/9)</td>
+                            <td>Undetermined</td>
+                            <td class=" dt-right">34043</td>
+                        </tr>
+                        <tr role="row" class="even">
+                            <td>16</td>
+                            <td>Sara</td>
+                            <td>Non Available</td>
+                            <td>Attack</td>
+                            <td>61 % (11/18)</td>
+                            <td>11 % (1/9)</td>
+                            <td>Undetermined</td>
+                            <td class=" dt-right">34043</td>
+                        </tr>
+                        <tr role="row" class="odd">
+                            <td>17</td>
+                            <td>Axel</td>
+                            <td>Non Available</td>
+                            <td>Central</td>
+                            <td>83 % (15/18)</td>
+                            <td>56 % (5/9)</td>
+                            <td>Undetermined</td>
+                            <td class=" dt-right">34043</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-12 col-sm-3"></div>
+        </div>
+    </div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <!-- build:js js/main.js -->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+    <!-- endbuild -->
 
 </body>
 
